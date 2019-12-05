@@ -1,5 +1,6 @@
 var path = require("path");
 var express = require("express");
+var ejs = require("ejs")
 
 var app = express();
 
@@ -20,7 +21,8 @@ app.listen(3000, function () {
 
 function calc(req, res) {
     
-    console.log("hey did I even make it this far in the program?");
+    // console.log("hey did I even make it this far in the program?");
+    console.log(req.body.nzd);
 
     var result = {success:false};
 
@@ -29,9 +31,14 @@ function calc(req, res) {
 
         var result = {success:true};
     } else {
-        var calcResult = req.body.number / 1.53;
+        var calc = req.body.nzd / 1.53;
+
+        var calcResult = calc.toFixed(2);
+
+        console.log(calcResult);
         var result = {success:true};
+        // var calcDisplay = {calcResult:calcResult};
     }
-    res.json(calcResult);
+    // res.json(calcDisplay);
     res.json(result);
 }
