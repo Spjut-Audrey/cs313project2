@@ -1,0 +1,22 @@
+{
+  "name": "cs313-project2",
+  "version": "1.0.0",
+  "description": "project 2 folder for cs313",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spjut-Audrey/cs313project2.git"
+  },
+  "author": "Audrey Spjut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spjut-Audrey/cs313project2/issues"
+  },
+  "homepage": "https://github.com/Spjut-Audrey/cs313project2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
