@@ -37,8 +37,10 @@ function calc(req, res) {
 
         console.log(calcResult);
         var result = {success:true};
+        
         // var calcDisplay = {calcResult:calcResult};
+
+        // return calcDisplay;
     }
-    // res.json(calcDisplay);
     res.json(result);
 }

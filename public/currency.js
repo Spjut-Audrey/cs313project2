@@ -10,13 +10,15 @@ function calc() {
 	$.post("/calc", params, function(result) {
 		if (result && result.success) {
             $("#status").text("Successfully calculated.");
+            $("#result").html(calcDisplay);
+            $("#result").append(" is how much NZD is worth in USD");
 		} else {
 			$("#status").text("Error calculating. Please try again.");
 		}
     });
     
-    //try and get the calculated result to display to user in HTML
-    // $.post("/calc", function(calcDisplay) {
+    // try and get the calculated result to display to user in HTML
+    // $.post("/calc", params, function(calcDisplay) {
     //     if (calcDisplay) {
     //         $("#result").html(calcDisplay);
     //         $("#result").append(" is how much NZD is worth in USD");
