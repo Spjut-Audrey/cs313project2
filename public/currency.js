@@ -9,7 +9,8 @@ function calc() {
 
 	$.post("/calc", params, function(result) {
 		if (result && result.success) {
-			$("#status").text("Successfully calculated.");
+            $("#status").text("Successfully calculated.");
+            $("$result").text(calcResult + " is how much NZD is worth in USD");
 		} else {
 			$("#status").text("Error calculating. Please try again.");
 		}

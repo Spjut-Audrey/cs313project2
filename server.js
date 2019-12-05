@@ -20,13 +20,18 @@ app.listen(3000, function () {
 
 function calc(req, res) {
     
+    console.log("hey did I even make it this far in the program?");
+
     var result = {success:false};
 
     if (req.body.number == 0){
-        var result = "$0 NZD is $0 in USD";
-    } else {
-        var result = req.body.number / 1.53;
-    }
+        var calcResult = "$0 NZD is $0 in USD";
 
-    res.json(result)
+        var result = {success:true};
+    } else {
+        var calcResult = req.body.number / 1.53;
+        var result = {success:true};
+    }
+    res.json(calcResult);
+    res.json(result);
 }
