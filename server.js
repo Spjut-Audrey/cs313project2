@@ -10,7 +10,7 @@ app.use(express.json() );
 app.use(express.urlencoded({ extended: true })); 
 
 app.get('/', function (req, res) {
-    res.render('currency', {});
+    res.render('/public/currency.html', {});
   });
 
 
