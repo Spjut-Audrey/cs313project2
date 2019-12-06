@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
     res.render('/', {});
+    res.end();
   });
 
 
