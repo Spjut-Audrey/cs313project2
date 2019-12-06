@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
 app.post("/calc", calc);     
 
 
-app.listen(3000, function () {
+app.listen(5000, function () {
     console.log("Server is up and listening on port 3000");
 });
 
