@@ -4,13 +4,14 @@ var ejs = require("ejs")
 
 var app = express();
 
-//make public/static stuff
+// make public/static stuff
+// why isn't this working for me???? BVLEHFHOUIS H FKUHEFLWEIHEFIHLU
 app.use(express.static("public"));
 app.use(express.json() );
 app.use(express.urlencoded({ extended: true })); 
 
 app.get('/', function (req, res) {
-    res.render('/public/currency.html', {});
+    res.render('/', {});
   });
 
 
