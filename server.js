@@ -7,6 +7,19 @@ app.use(express.static("public"));
 app.use(express.json() );
 app.use(express.urlencoded({ extended: true })); 
 
+//maybe this port will fix everything?? PLEASE I JUST WANT IT TO WORK
+const port = process.env.PORT || 5000;
+// listen for port
+app.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}/`);
+});
+
+// app.listen(5000, function () {
+//     console.log("Server is up and listening on port 5000");
+// });
+
+//functions
+
 app.get('/', function (req, res) {
     console.log("Received a request for /");
 
@@ -17,11 +30,6 @@ app.get('/', function (req, res) {
 app.post("/calc", calc);     
 
 
-app.listen(5000, function () {
-    console.log("Server is up and listening on port 5000");
-});
-
-//functions
 
 function calc(req, res) {
     
