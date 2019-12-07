@@ -26,19 +26,43 @@ app.listen(5000, function () {
 
 //functions
 
-function calc(req, res, next) {
+function calc(req, res) {
     
     // console.log("hey did I even make it this far in the program?");
-    console.log(req.body.nzd);
+    console.log(req.body.foreignCurr);
+    console.log(req.body.currName);
 
-    var result = {success:false};
+    // var result = {success:false};
 
-    if (req.body.number == 0){
-        var calcResult = "$0 NZD is $0 in USD";
+    var calc = '0';
 
-        var result = {success:true};
+    if (req.body.number == 0 && req.body.currName){
+        var calc = 0;
+
     } else {
-        var calc = req.body.nzd / 1.53;
+        switch(req.body.currName) {
+            case "NZD":
+                var calc = req.body.foreignCurr / 1.53;
+                break;
+            case "EUR":
+                var calc = req.body.foreignCurr / .90;
+                break;
+            case "GBP":
+                var calc = req.body.foreignCurr / .76;
+                break;
+            case "CAD":
+                var calc = req.body.foreignCurr / 1.33;
+                break;
+            case "AUD":
+                var calc = req.body.foreignCurr / 1.46;
+                break; 
+            case "undefined":
+                prompt("Please Pick a currency name");
+
+                exit;
+            default: 
+        }
+        
 
         var calcResult = calc.toFixed(2);
 

@@ -6,14 +6,23 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-	<script src="currency.js"></script>
+    <script src="currency.js"></script>
+    <link rel="stylesheet" href="main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 <div>
     <h1>Currency Calculator</h1>
 
-    <h2>Find out how much New Zealand Dollars (NZD) are worth in US dollars</h2>
-	<input type="number" id="nzd" placeholder="NZD amount"><br>
+    <h2>Find out how much Foreign Currency is worth in US Dollars!</h2>
+    <input type="radio" name="currName" value="NZD" id="NZD">NZD<br>
+    <input type="radio" name="currName" value="EUR" id="EUR">EUR<br>
+    <input type="radio" name="currName" value="GBP" id="GBP">GBP<br>
+    <input type="radio" name="currName" value="CAD" id="CAD">CAD<br>
+    <input type="radio" name="currName" value="AUD" id="AUD">AUD<br>
+
+	<input type="number" id="foreignCurr" placeholder="Foreign Currency Amount"><br>
 	<button onclick="calc();">Calculate!</button>
 	<br>
     <div id="status"></div>

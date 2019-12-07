@@ -1,0 +1,16 @@
+* {
+    font-family: 'Public Sans', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+}
+
+div {
+    margin: 0 auto;
+}
+
+button {
+    background-color: blueviolet;
+    border: 2px solid rgba(71, 8, 131, 0.2)
+}

@@ -1,18 +1,25 @@
 //coping from week 12 for base file
 
 function calc() {
-	var nzd = $("#nzd").val();
+    //get number
+    var foreignCurr = $("#foreignCurr").val();
+    
+    //get name
+    var currName = $('input[name=currName]:checked').attr('id');
 
 	var params = {
-		nzd: nzd
+        foreignCurr: foreignCurr,
+        currName: currName
 	};
 
 	$.post("/calc", params, function(calcResult) {
 		if (calcResult) {
             $("#status").text("Successfully calculated.");
             $("#result").html("$");
-            $("#result").append(nzd);
-            $("#result").append(" NZD is worth $");
+            $("#result").append(foreignCurr);
+            $("#result").append(" ");
+            $("#result").append(currName);
+            $("#result").append(" is worth $");
             $("#result").append(calcResult);
             $("#result").append(" in USD");
 		} else {
