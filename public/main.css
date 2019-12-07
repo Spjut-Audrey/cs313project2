@@ -7,8 +7,8 @@
     background-color: blueviolet;
     padding: 10px 10px 10px 10px;
     width: 100%;
-    margin-top: 0;
-    margin-left: 0;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .container {
@@ -28,11 +28,19 @@ input {
 }
 
 button {
+    font-size: 1.5em;
     color: white;
     margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
+    padding: 15px 15px 15px 15px;
     background-color: blueviolet;
     border: none;
-    border-radius: 17px;
+    border-radius: 25px;
+    box-shadow: 3px 4px 10px #390a42;
+}
+
+button:active {
+    /* -webkit-box-shadow: inset 0px 0px 5px #390a42;
+     -moz-box-shadow: inset 0px 0px 5px #390a42; */
+          box-shadow: inset 4px 3px 7px #390a42;
 }
 
