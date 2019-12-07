@@ -7,11 +7,14 @@ function calc() {
 		nzd: nzd
 	};
 
-	$.post("/calc", params, function(result) {
-		if (result && result.success) {
+	$.post("/calc", params, function(calcResult) {
+		if (calcResult) {
             $("#status").text("Successfully calculated.");
-            $("#result").html(calcDisplay);
-            $("#result").append(" is how much NZD is worth in USD");
+            $("#result").html("$");
+            $("#result").append(nzd);
+            $("#result").append(" NZD is worth $");
+            $("#result").append(calcResult);
+            $("#result").append(" in USD");
 		} else {
 			$("#status").text("Error calculating. Please try again.");
 		}
