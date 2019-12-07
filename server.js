@@ -1,7 +1,4 @@
-var path = require("path");
 var express = require("express");
-var ejs = require("ejs");
-
 var app = express();
 
 // make public/static stuff

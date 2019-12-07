@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/Spjut-Audrey/cs313project2#readme",
   "dependencies": {
-    "ejs": "^3.0.1",
     "express": "^4.17.1"
   }
 }
