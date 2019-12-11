@@ -47,11 +47,15 @@ function calc() {
     endpoint = 'latest'
     access_key = '1d7a9025dd73a20937855d07827601f5';
 
+
     // get the most recent exchange rates via the "latest" endpoint:
     $.ajax({
         url: 'https://data.fixer.io/api/' + endpoint + '?access_key=' + access_key,   
         dataType: 'jsonp',
         success: function(json) {
+
+            var gbpResult = 0;
+
             switch(currName) {
                 case "PLN":
                     var gbpResult = foreignCurr / json.rates.PLN * json.rates.GBP;
