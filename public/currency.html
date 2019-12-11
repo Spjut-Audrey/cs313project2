@@ -16,18 +16,24 @@
         <h1>Currency Calculator</h1>
     </div>
     <div class="container">
-        <h2>Find out how much Foreign Currency is worth in US Dollars!</h2>
-        <input type="radio" name="currName" value="NZD" id="NZD">NZD<br>
-        <input type="radio" name="currName" value="EUR" id="EUR">EUR<br>
-        <input type="radio" name="currName" value="GBP" id="GBP">GBP<br>
+        <h2>Find out how much Foreign Currency is worth!!</h2>
+        <input type="radio" name="currName" value="USD" id="USD">USD <span>(GBP ONLY)</span><br>
+        <input type="radio" name="currName" value="PLN" id="PLN">PLN<br>
+        <input type="radio" name="currName" value="MXN" id="MXN">MXN<br>
         <input type="radio" name="currName" value="CAD" id="CAD">CAD<br>
         <input type="radio" name="currName" value="AUD" id="AUD">AUD<br>
 
         <input type="number" cols="100" id="foreignCurr" placeholder=" Foreign Currency Amount"><br>
-        <button onclick="calc();">Calculate!</button>
+        <button id="usdCalc" onclick="dollarCalc();">Calculate in USD!</button>
+        <button id="gbpCalc" onclick="calc();">Calculate in GBP*</button><br>
         <br>
+        <span>*GBP is most accurate exchange rate conversion</span>
+        <br><br>
         <div id="status"></div>
-        <div id="result"></div>
+        <div id="result"></div><br><br>
+
+        <div id="GBPstatus"></div>
+        <div id="GBPresult"></div>
     </div>
 
 </body>

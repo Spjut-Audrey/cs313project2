@@ -44,3 +44,7 @@ button:active {
           box-shadow: inset 4px 3px 7px #390a42;
 }
 
+span {
+    font-size: .75em;
+}
+

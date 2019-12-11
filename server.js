@@ -18,20 +18,45 @@ app.listen(port, () => {
 //     console.log("Server is up and listening on port 5000");
 // });
 
-//functions
-
 app.get('/', function (req, res) {
     console.log("Received a request for /");
-
-
   });
 
 
+app.post("/dollarCalc", dollarCalc);
 app.post("/calc", calc);     
 
-
+//functions
 
 function calc(req, res) {
+    console.log("I've made it this far");
+    console.log(req.body.foreignCurr);
+    console.log(req.body.currName);
+    
+    var gbpResult = 0;
+    // switch(req.body.currName) {
+    //     case "PLN":
+    //         var gbpResult = req.body.foreignCurr / json.rates.GBP;
+    //         break;
+    //     case "MXN":
+    //         var gbpResult = req.body.foreignCurr / json.rates.GBP;
+    //         break;
+    //     case "GBP":
+    //         var gbpResult = req.body.foreignCurr / json.rates.GBP;
+    //         break;
+    //     case "CAD":
+    //         var gbpResult = req.body.foreignCurr / json.rates.GBP;
+    //         break;
+    //     case "AUD":
+    //         var gbpResult = req.body.foreignCurr / json.rates.GBP;
+    //         break;
+    //     default: 
+    //     }
+    console.log(gbpResult);
+    res.json(gbpResult);
+}
+
+function dollarCalc(req, res) {
     
     // console.log("hey did I even make it this far in the program?");
     console.log(req.body.foreignCurr);
@@ -39,27 +64,27 @@ function calc(req, res) {
 
     // var result = {success:false};
 
-    var calc = '0';
+    var dollarCalc = '0';
 
     if (req.body.number == 0 && req.body.currName){
-        var calc = 0;
+        var dollarCalc = 0;
 
     } else {
         switch(req.body.currName) {
-            case "NZD":
-                var calc = req.body.foreignCurr / 1.53;
+            case "PLN":
+                var dollarCalc = req.body.foreignCurr / 3.86;
                 break;
-            case "EUR":
-                var calc = req.body.foreignCurr / .90;
+            case "MXN":
+                var dollarCalc = req.body.foreignCurr / 19.14;
                 break;
             case "GBP":
-                var calc = req.body.foreignCurr / .76;
+                var dollarCalc = req.body.foreignCurr / .76;
                 break;
             case "CAD":
-                var calc = req.body.foreignCurr / 1.33;
+                var dollarCalc = req.body.foreignCurr / 1.33;
                 break;
             case "AUD":
-                var calc = req.body.foreignCurr / 1.46;
+                var dollarCalc = req.body.foreignCurr / 1.46;
                 break; 
             case "undefined":
                 prompt("Please Pick a currency name");
@@ -67,11 +92,9 @@ function calc(req, res) {
                 exit;
             default: 
         }
-        
+        var usdCalcResult = dollarCalc.toFixed(2);
 
-        var calcResult = calc.toFixed(2);
-
-        console.log(calcResult);
+        console.log(usdCalcResult);
         // var result = {success:true};
 
         // next();
@@ -81,7 +104,7 @@ function calc(req, res) {
 
         // return calcDisplay;
     }
-    res.json(calcResult);
+    res.json(usdCalcResult);
 
 }
 
