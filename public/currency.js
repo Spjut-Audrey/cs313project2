@@ -56,6 +56,8 @@ function calc() {
 
             var gbpResult = 0;
 
+            console.log(json.rates);
+
             switch(currName) {
                 case "PLN":
                     var gbpResult = foreignCurr / json.rates.PLN * json.rates.GBP;
